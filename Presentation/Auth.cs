@@ -24,31 +24,48 @@ namespace Presentation
             MessageTxt.Text = $"{category}: {message}";
         }
 
-        private void Verify()
+        private bool Verify(string username, string password)
         {
-            if (UsernameTxt.Text.Length <= 0 || PasswordTxt.Text.Length <= 0) 
+            if (UsernameTxt.Text.Length <= 0 || PasswordTxt.Text.Length <= 0)
+            {
                 Message("Error", "Por favor llene todos los campos para continuar.");
+                return false;
+            }
             else
             {
-                user.Username = UsernameTxt.Text;
-                user.Password = PasswordTxt.Text;
+                user.Username = username;
+                user.Password = password;
                 foreach (User item in User.Storage)
                 {
-                    if (user.Username.Contains(item.Username) && user.Password.Contains(item.Password))
+                    //if (user.Username.Contains(item.Username) && user.Password.Contains(item.Password))
+                    if(item.Username.Contains(user.Username) | item.Username == user.Username)
                     {
-                        Message("Error", "Las credenciales de accesos son correctas.");
+                        if(item.Password.Contains(PasswordTxt.Text) | item.Password == PasswordTxt.Text)
+                        {
+                            return true;
+                        }
+                        return false;
                     }
                     else
                     {
-                        Message("Error", "El usuario o la contraseña son incorrectos.");
+                        UsernameTxt.Clear();
+                        PasswordTxt.Clear();
+                        return false;
                     }
                 }
+                return false;
             }
         }
 
         private void SigninBtn_Click(object sender, EventArgs e)
         {
-            Verify();
+            if(Verify(UsernameTxt.Text, PasswordTxt.Text))
+            {
+                Message("Hecho", "Las credenciales de acceso son correctas");
+            } else
+            {
+                Message("Error", "Las credenciales de acceso son incorrectas");
+            }
         }
 
         private readonly User user = new();

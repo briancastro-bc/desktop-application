@@ -31,13 +31,13 @@ namespace Presentation
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Auth));
             this.LoginContainer = new System.Windows.Forms.Panel();
+            this.SigninBtn = new System.Windows.Forms.Button();
+            this.MessageTxt = new System.Windows.Forms.Label();
+            this.PasswordTxt = new System.Windows.Forms.TextBox();
+            this.UsernameTxt = new System.Windows.Forms.TextBox();
+            this.SigninTitle = new System.Windows.Forms.Label();
             this.Container = new System.Windows.Forms.Panel();
             this.Picture = new System.Windows.Forms.PictureBox();
-            this.SigninTitle = new System.Windows.Forms.Label();
-            this.UsernameTxt = new System.Windows.Forms.TextBox();
-            this.PasswordTxt = new System.Windows.Forms.TextBox();
-            this.MessageTxt = new System.Windows.Forms.Label();
-            this.SigninBtn = new System.Windows.Forms.Button();
             this.LoginContainer.SuspendLayout();
             this.Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Picture)).BeginInit();
@@ -56,6 +56,75 @@ namespace Presentation
             this.LoginContainer.Name = "LoginContainer";
             this.LoginContainer.Size = new System.Drawing.Size(345, 381);
             this.LoginContainer.TabIndex = 0;
+            // 
+            // SigninBtn
+            // 
+            this.SigninBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SigninBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.SigninBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SigninBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.SigninBtn.FlatAppearance.BorderSize = 2;
+            this.SigninBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.SigninBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SigninBtn.Location = new System.Drawing.Point(118, 284);
+            this.SigninBtn.Name = "SigninBtn";
+            this.SigninBtn.Size = new System.Drawing.Size(95, 31);
+            this.SigninBtn.TabIndex = 3;
+            this.SigninBtn.Text = "Signin";
+            this.SigninBtn.UseVisualStyleBackColor = true;
+            this.SigninBtn.Click += new System.EventHandler(this.SigninBtn_Click);
+            // 
+            // MessageTxt
+            // 
+            this.MessageTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.MessageTxt.AutoSize = true;
+            this.MessageTxt.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.MessageTxt.Location = new System.Drawing.Point(96, 226);
+            this.MessageTxt.MaximumSize = new System.Drawing.Size(160, 0);
+            this.MessageTxt.Name = "MessageTxt";
+            this.MessageTxt.Size = new System.Drawing.Size(56, 15);
+            this.MessageTxt.TabIndex = 0;
+            this.MessageTxt.Text = "Message:";
+            this.MessageTxt.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.MessageTxt.Visible = false;
+            // 
+            // PasswordTxt
+            // 
+            this.PasswordTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PasswordTxt.Location = new System.Drawing.Point(70, 179);
+            this.PasswordTxt.Name = "PasswordTxt";
+            this.PasswordTxt.PlaceholderText = "Contraseña";
+            this.PasswordTxt.Size = new System.Drawing.Size(200, 23);
+            this.PasswordTxt.TabIndex = 2;
+            this.PasswordTxt.UseSystemPasswordChar = true;
+            // 
+            // UsernameTxt
+            // 
+            this.UsernameTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.UsernameTxt.Location = new System.Drawing.Point(70, 111);
+            this.UsernameTxt.Name = "UsernameTxt";
+            this.UsernameTxt.PlaceholderText = "Usuario";
+            this.UsernameTxt.Size = new System.Drawing.Size(200, 23);
+            this.UsernameTxt.TabIndex = 1;
+            // 
+            // SigninTitle
+            // 
+            this.SigninTitle.AutoSize = true;
+            this.SigninTitle.Font = new System.Drawing.Font("Segoe UI Black", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.SigninTitle.Location = new System.Drawing.Point(116, 24);
+            this.SigninTitle.Name = "SigninTitle";
+            this.SigninTitle.Size = new System.Drawing.Size(107, 40);
+            this.SigninTitle.TabIndex = 0;
+            this.SigninTitle.Text = "Signin";
+            this.SigninTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Container
             // 
@@ -78,75 +147,6 @@ namespace Presentation
             this.Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Picture.TabIndex = 0;
             this.Picture.TabStop = false;
-            // 
-            // SigninTitle
-            // 
-            this.SigninTitle.AutoSize = true;
-            this.SigninTitle.Font = new System.Drawing.Font("Segoe UI Black", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.SigninTitle.Location = new System.Drawing.Point(116, 24);
-            this.SigninTitle.Name = "SigninTitle";
-            this.SigninTitle.Size = new System.Drawing.Size(107, 40);
-            this.SigninTitle.TabIndex = 0;
-            this.SigninTitle.Text = "Signin";
-            this.SigninTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // UsernameTxt
-            // 
-            this.UsernameTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.UsernameTxt.Location = new System.Drawing.Point(70, 111);
-            this.UsernameTxt.Name = "UsernameTxt";
-            this.UsernameTxt.PlaceholderText = "Usuario";
-            this.UsernameTxt.Size = new System.Drawing.Size(200, 23);
-            this.UsernameTxt.TabIndex = 1;
-            // 
-            // PasswordTxt
-            // 
-            this.PasswordTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.PasswordTxt.Location = new System.Drawing.Point(70, 179);
-            this.PasswordTxt.Name = "PasswordTxt";
-            this.PasswordTxt.PlaceholderText = "Contraseña";
-            this.PasswordTxt.Size = new System.Drawing.Size(200, 23);
-            this.PasswordTxt.TabIndex = 2;
-            this.PasswordTxt.UseSystemPasswordChar = true;
-            // 
-            // MessageTxt
-            // 
-            this.MessageTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.MessageTxt.AutoSize = true;
-            this.MessageTxt.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.MessageTxt.Location = new System.Drawing.Point(96, 226);
-            this.MessageTxt.MaximumSize = new System.Drawing.Size(160, 0);
-            this.MessageTxt.Name = "MessageTxt";
-            this.MessageTxt.Size = new System.Drawing.Size(56, 15);
-            this.MessageTxt.TabIndex = 0;
-            this.MessageTxt.Text = "Message:";
-            this.MessageTxt.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.MessageTxt.Visible = false;
-            // 
-            // SigninBtn
-            // 
-            this.SigninBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.SigninBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.SigninBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SigninBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.SigninBtn.FlatAppearance.BorderSize = 2;
-            this.SigninBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
-            this.SigninBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SigninBtn.Location = new System.Drawing.Point(118, 284);
-            this.SigninBtn.Name = "SigninBtn";
-            this.SigninBtn.Size = new System.Drawing.Size(95, 31);
-            this.SigninBtn.TabIndex = 3;
-            this.SigninBtn.Text = "Signin";
-            this.SigninBtn.UseVisualStyleBackColor = true;
-            this.SigninBtn.Click += new System.EventHandler(this.SigninBtn_Click);
             // 
             // Auth
             // 
