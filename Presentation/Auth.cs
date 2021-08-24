@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Presentation.Models;
+using Presentation.Views;
 
 namespace Presentation
 {
@@ -28,14 +29,13 @@ namespace Presentation
         {
             if (UsernameTxt.Text.Length <= 0 || PasswordTxt.Text.Length <= 0)
             {
-                Message("Error", "Por favor llene todos los campos para continuar.");
                 return false;
             }
             else
             {
                 user.Username = username;
                 user.Password = password;
-                foreach (User item in User.Storage)
+                foreach (User item in Global.Storage)
                 {
                     //if (user.Username.Contains(item.Username) && user.Password.Contains(item.Password))
                     if(item.Username.Contains(user.Username) | item.Username == user.Username)
@@ -62,12 +62,17 @@ namespace Presentation
             if(Verify(UsernameTxt.Text, PasswordTxt.Text))
             {
                 Message("Hecho", "Las credenciales de acceso son correctas");
+                Global.Data.Username = UsernameTxt.Text;
+                Global.Data.Password = PasswordTxt.Text;
+                Formulary formulary = new();
+                formulary.Show();
+                Hide();
             } else
             {
-                Message("Error", "Las credenciales de acceso son incorrectas");
+                Message("Error", "Las credenciales de acceso son incorrectas o no llenó los campos");
             }
         }
 
-        private readonly User user = new();
+        public static readonly User user = new();
     }
 }

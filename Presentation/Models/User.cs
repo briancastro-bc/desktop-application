@@ -14,13 +14,9 @@ namespace Presentation.Models
         public string Password { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }
+        public string Phone { get; set; }
         public string Gender { get; set; }
         public string Rh { get; set; }
         public string Role { get; set; }
-        public static readonly List<User> Storage = new()
-        {
-            new User() { Id = "1098306124", IdType = "TI", Username = "Yito", Password = "12345", Name = "Brian", LastName = "Castro", Gender = "M", Rh = "B+", Role = "Admin" },
-            new User() { Id = "1092454221", IdType = "TI", Username = "ElSanti", Password = "12345", Name = "Santiago", LastName = "Castro", Gender = "M", Rh = "B+", Role = "Admin" }
-        };
     }
 }

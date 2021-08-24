@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Presentation.Models
 {
-    class Carnet : User
+    public class Carnet : User
     {
         public string Photo { get; set; }
     }
